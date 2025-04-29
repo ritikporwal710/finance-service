@@ -162,8 +162,6 @@ public int dueDays(Date dueDate) {
 
     public ResponseEntity<String> loginUser(LoginDTO loginDTO) {
         try {
-            
-       
         String email = loginDTO.getEmail();
         String password = loginDTO.getPassword();
     
@@ -204,26 +202,26 @@ public int dueDays(Date dueDate) {
 
         // System.out.println("notifications deleting: " + afterBills);
 
-        for (Bill bill : bills) {
-            System.out.println("bill first one: " + bill);
-            Notification notification = new Notification();
-            notification.setName(bill.getBillName());
-            System.out.println("notification name: " + notification.getName());
-            notification.setAmount(bill.getAmount());
-            System.out.println("notification amount: " + notification.getAmount());
-            System.out.println("notification dueDate: " + bill.getDueDate());
-            System.out.println("notification dueDays: " + dueDays(bill.getDueDate()));
-            notification.setDueDays(dueDays(bill.getDueDate()));
-            System.out.println("notification dueDays: " + notification.getDueDays());
-            notification.setStatus("active");
-            System.out.println("notification status: " + notification.getStatus());
-            notification.setTotalLimit(bill.getAmount());
-            System.out.println("notification totalLimit: " + notification.getTotalLimit());
-            notification.setType("reminder");
-            notification.setUser(user);
-            System.out.println("notification after all details: " + notification);
-            notificationRepository.save(notification);
-        }
+        // for (Bill bill : bills) {
+        //     System.out.println("bill first one: " + bill);
+        //     Notification notification = new Notification();
+        //     notification.setName(bill.getBillName());
+        //     System.out.println("notification name: " + notification.getName());
+        //     notification.setAmount(bill.getAmount());
+        //     System.out.println("notification amount: " + notification.getAmount());
+        //     System.out.println("notification dueDate: " + bill.getDueDate());
+        //     System.out.println("notification dueDays: " + dueDays(bill.getDueDate()));
+        //     notification.setDueDays(dueDays(bill.getDueDate()));
+        //     System.out.println("notification dueDays: " + notification.getDueDays());
+        //     notification.setStatus("active");
+        //     System.out.println("notification status: " + notification.getStatus());
+        //     notification.setTotalLimit(bill.getAmount());
+        //     System.out.println("notification totalLimit: " + notification.getTotalLimit());
+        //     notification.setType("reminder");
+        //     notification.setUser(user);
+        //     System.out.println("notification after all details: " + notification);
+        //     notificationRepository.save(notification);
+        // }
 
     
         return ResponseEntity.ok()
